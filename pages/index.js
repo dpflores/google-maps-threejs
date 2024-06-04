@@ -9,8 +9,14 @@ export default function App() {
       <li>
         <Link href="/intro">ThreeJS Intro</Link>
       </li>
-      <li>
+      {/* <li>
         <Link href="/markers">Advanced Markers</Link>
+      </li> */}
+      <li>
+        <Link href="/3dmap">3D Vehicle on Google Maps</Link>
+      </li>
+      <li>
+        <Link href="/3dcar">3D Vehicle</Link>
       </li>
     </ul>
   );
