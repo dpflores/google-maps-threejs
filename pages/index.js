@@ -29,7 +29,7 @@ export default function App() {
         By{" "}
         <a
           className="footer-link"
-          href="https://github.com/dpflores/google-maps-threejs"
+          href="https://github.com/dpflores/next-3d-vehicles"
         >
           Del Piero Flores
         </a>
