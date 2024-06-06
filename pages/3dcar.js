@@ -1,13 +1,24 @@
 import { Canvas } from "@react-three/fiber";
-import { useLoader } from "@react-three/fiber";
+import { useLoader, useFrame } from "@react-three/fiber";
 import { useGLTF, Stage, PresentationControls } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Model = () => {
-  const gltf = useLoader(GLTFLoader, "/tesla_model_3/scene.gltf");
-  console.log(gltf);
-  let group = gltf.scene;
+  const gltf = useLoader(GLTFLoader, "/chevrolet_corvette_c7/scene.gltf");
+  const group = gltf.scene.children[0].children[0].children[0];
+  console.log(group);
+  console.log(group.children[0]);
+
+  useFrame((state, delta) => {
+    group.children[0].rotation.x += delta;
+    group.children[2].rotation.x += delta;
+    group.children[4].rotation.x += delta;
+    group.children[6].rotation.x += delta;
+  });
   return (
     <>
       <primitive object={gltf.scene} scale={0.4} />
@@ -36,6 +47,10 @@ export default function App() {
           </Stage>
         </PresentationControls>
       </Canvas>
+
+      <Link className="return" href="/">
+        <FontAwesomeIcon icon={faArrowLeft} /> Return
+      </Link>
     </div>
   );
 }

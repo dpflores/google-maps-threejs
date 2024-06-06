@@ -38,10 +38,17 @@ a {
 .directions {
   position: absolute;
   background: black;
-  top: 1rem;
-  right: 1rem;
+  bottom: 3rem;
+  left: 3rem;
   width: 25%;
   padding: 1rem;
+}
+
+@media (max-width: 500px) {
+  .directions {
+    width: 80%;
+    /* top: 3rem; */
+  }
 }
 
 #map {
@@ -196,4 +203,69 @@ input[type="submit"]:hover {
 body {
   padding: 0;
   margin: 0;
+}
+
+html,
+body,
+#root,
+canvas {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #000000;
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: 80%;
+}
+li:hover {
+  background-color: #04aa6d;
+  /* cursor: pointer; */
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a.footer-link:hover {
+  color: #04bd79;
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.return {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.return2 {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+h1 {
+  color: #04bd79;
 }

@@ -7,6 +7,9 @@ import { Line2 } from "three/examples/jsm/lines/Line2.js";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial.js";
 import { LineGeometry } from "three/examples/jsm/lines/LineGeometry.js";
 import { getGeocode, getLatLng } from "use-places-autocomplete";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const mapOptions = {
   mapId: process.env.NEXT_PUBLIC_MAP_ID,
@@ -160,7 +163,11 @@ function Directions({ setRoute }) {
         <h3>Destination</h3>
         <p>{destination}</p>
       </div> */}
+
       <div className="directions">
+        <Link className="return2" href="/">
+          <FontAwesomeIcon icon={faArrowLeft} /> Return
+        </Link>
         <form onSubmit={onForm}>
           <label>
             Origin:
@@ -171,6 +178,7 @@ function Directions({ setRoute }) {
             <input type="text" name="destination" defaultValue={destination} />
           </label>
           <input type="submit" value="Submit" />
+          <div></div>
         </form>
       </div>
     </>
