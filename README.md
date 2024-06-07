@@ -1,5 +1,7 @@
 # next 3d vehicles
 
+Use of react threeJs fiber library for vehicle showcase and google maps API for 3D map navigation.
+
 ## For development
 
 in `.env` use
